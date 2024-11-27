@@ -2,6 +2,7 @@ import 'package:ecommerce_app/src/features/cart/presentation/cart_screen.dart';
 import 'package:ecommerce_app/src/features/favorites/presentation/favorites_screen.dart';
 import 'package:ecommerce_app/src/features/home/presentation/home_screen.dart';
 import 'package:ecommerce_app/src/features/profile/presentation/profile_screen.dart';
+import 'package:ecommerce_app/src/utils/constants/image_sitrings.dart';
 import 'package:flutter/material.dart';
 
 class NavigationMenu extends StatefulWidget {
@@ -57,7 +58,7 @@ class _NavigationMenuState extends State<NavigationMenu> {
               leading: Transform(
                 transform: Matrix4.translationValues(24.0, 0.0, 0.0),
                 child: Image.asset(
-                  'assets/images/logo.png',
+                  KImages.appLogo,
                   color: isDarkMode ? Colors.white : Colors.black,
                 ),
               ),

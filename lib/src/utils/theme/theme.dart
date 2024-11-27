@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/src/utils/constants/colors.dart';
 import 'package:ecommerce_app/src/utils/theme/custom_theme/app_bar_theme.dart';
 import 'package:ecommerce_app/src/utils/theme/custom_theme/navigation_bar_theme.dart';
 import 'package:flutter/material.dart';
@@ -8,11 +9,11 @@ class KAppTheme {
   // Light theme
   static ThemeData kLightTheme = ThemeData.light(useMaterial3: true).copyWith(
     // Scaffold background color
-    scaffoldBackgroundColor: const Color(0xFFFFFFFF),
+    scaffoldBackgroundColor: KColors.kLightColor,
 
     // Color scheme
     colorScheme: ColorScheme.fromSeed(
-      seedColor: const Color(0xFFFFFFFF),
+      seedColor: KColors.kLightColor,
       brightness: Brightness.light,
     ),
 
@@ -26,11 +27,11 @@ class KAppTheme {
   // Dark theme
   static ThemeData kDarkTheme = ThemeData.dark(useMaterial3: true).copyWith(
     // Scaffold background color
-    scaffoldBackgroundColor: const Color(0xFF111111),
+    scaffoldBackgroundColor: KColors.kDarkColor,
 
     // Color scheme
     colorScheme: ColorScheme.fromSeed(
-      seedColor: const Color(0xFF111111),
+      seedColor: KColors.kDarkColor,
       brightness: Brightness.dark,
     ),
 

@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/src/features/home/presentation/banner_slider.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -42,19 +43,9 @@ class HomeScreen extends StatelessWidget {
       child: Column(
         children: [
           // Banner Görseli
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(26.0),
-              child: SizedBox(
-                height: 260,
-                width: double.infinity,
-                child: Image.network(
-                  'https://fakeimg.pl/400x260',
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+            child: BannerSlider(),
           ),
 
           // Kategoriler Başlığı ve Butonu
@@ -129,7 +120,7 @@ class HomeScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ClipRRect(
-                    borderRadius: BorderRadius.circular(12.0),
+                    borderRadius: BorderRadius.circular(18.0),
                     child: Image.network(
                       product["image"]!,
                       height: 200,
