@@ -91,12 +91,9 @@ class _NavigationMenuState extends State<NavigationMenu> {
         },
         destinations: _destinations,
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-        child: IndexedStack(
-          index: selectedIndex,
-          children: _screens,
-        ),
+      body: IndexedStack(
+        index: selectedIndex,
+        children: _screens,
       ),
     );
   }

@@ -12,7 +12,7 @@ class KAppTheme {
 
     // Color scheme
     colorScheme: ColorScheme.fromSeed(
-      seedColor: Color(0xFFFFFFFF),
+      seedColor: const Color(0xFFFFFFFF),
       brightness: Brightness.light,
     ),
 
@@ -30,7 +30,7 @@ class KAppTheme {
 
     // Color scheme
     colorScheme: ColorScheme.fromSeed(
-      seedColor: Color(0xFF111111),
+      seedColor: const Color(0xFF111111),
       brightness: Brightness.dark,
     ),
 
