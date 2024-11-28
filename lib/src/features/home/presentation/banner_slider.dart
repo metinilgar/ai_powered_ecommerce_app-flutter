@@ -15,13 +15,16 @@ class BannerSlider extends StatelessWidget {
       RoundedImage(imageUrl: KImages.banner4),
     ];
 
-    return CarouselSlider(
-      items: imageSliders,
-      options: CarouselOptions(
-        autoPlay: true,
-        enlargeCenterPage: true,
-        viewportFraction: 1,
-        autoPlayInterval: const Duration(seconds: 8),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+      child: CarouselSlider(
+        items: imageSliders,
+        options: CarouselOptions(
+          autoPlay: true,
+          enlargeCenterPage: true,
+          viewportFraction: 1,
+          autoPlayInterval: const Duration(seconds: 8),
+        ),
       ),
     );
   }

@@ -14,10 +14,7 @@ class HomeScreen extends StatelessWidget {
       child: Column(
         children: [
           // Banner Görseli
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-            child: BannerSlider(),
-          ),
+          BannerSlider(),
 
           // Kategoriler Başlığı ve Butonu
           SeeAllHeader(title: "Kategoriler"),

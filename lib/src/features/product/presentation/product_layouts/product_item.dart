@@ -35,7 +35,12 @@ class ProductItem extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 8),
-          Text(product.name, style: Theme.of(context).textTheme.titleLarge),
+          Text(
+            product.name,
+            style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
+          ),
           Text(
             product.price,
             style: Theme.of(context).textTheme.bodyLarge!.copyWith(

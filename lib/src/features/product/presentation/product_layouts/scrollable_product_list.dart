@@ -11,29 +11,41 @@ class ScrollableProductList extends StatelessWidget {
   Widget build(BuildContext context) {
     final popularProducts = [
       Product(
-          name: "Ürün 1",
-          imageUrl: "https://fakeimg.pl/150x150/?text=Ürün1",
-          price: "₺50.00"),
+        name: "Ürün 1",
+        imageUrl: "https://fakeimg.pl/150x150/?text=Ürün1",
+        price: "₺50.00",
+        category: "Category 1",
+      ),
       Product(
-          name: "Ürün 2",
-          imageUrl: "https://fakeimg.pl/150x150/?text=Ürün2",
-          price: "₺75.00"),
+        name: "Ürün 2",
+        imageUrl: "https://fakeimg.pl/150x150/?text=Ürün2",
+        price: "₺75.00",
+        category: "Category 2",
+      ),
       Product(
-          name: "Ürün 3",
-          imageUrl: "https://fakeimg.pl/150x150/?text=Ürün3",
-          price: "₺120.00"),
+        name: "Ürün 3",
+        imageUrl: "https://fakeimg.pl/150x150/?text=Ürün3",
+        price: "₺120.00",
+        category: "Category 3",
+      ),
       Product(
-          name: "Ürün 4",
-          imageUrl: "https://fakeimg.pl/150x150/?text=Ürün4",
-          price: "₺200.00"),
+        name: "Ürün 4",
+        imageUrl: "https://fakeimg.pl/150x150/?text=Ürün4",
+        price: "₺200.00",
+        category: "Category 4",
+      ),
       Product(
-          name: "Ürün 5",
-          imageUrl: "https://fakeimg.pl/150x150/?text=Ürün4",
-          price: "₺300.00"),
+        name: "Ürün 5",
+        imageUrl: "https://fakeimg.pl/150x150/?text=Ürün4",
+        price: "₺300.00",
+        category: "Category 5",
+      ),
       Product(
-          name: "Ürün 6",
-          imageUrl: "https://fakeimg.pl/150x150/?text=Ürün4",
-          price: "₺100.00"),
+        name: "Ürün 6",
+        imageUrl: "https://fakeimg.pl/150x150/?text=Ürün4",
+        price: "₺100.00",
+        category: "Category 6",
+      ),
     ];
 
     return SizedBox(
