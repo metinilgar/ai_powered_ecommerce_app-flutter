@@ -54,7 +54,8 @@ class ProductDetailScreen extends StatelessWidget {
               // Ürün Görseli
               Center(
                 child: Image.network(
-                  'https://korayspor.mncdn.com/mnresize/1920/-/korayspor/products/DV3854-011_1.jpg',
+                  width: double.infinity,
+                  product.imageUrl,
                 ),
               ),
               const SizedBox(height: 16),

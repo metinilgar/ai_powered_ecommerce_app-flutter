@@ -29,7 +29,7 @@ class ProductItem extends StatelessWidget {
             borderRadius: BorderRadius.circular(18.0),
             child: Image.network(
               product.imageUrl,
-              height: 200,
+              height: 220,
               width: double.infinity,
               fit: BoxFit.cover,
             ),
@@ -37,6 +37,8 @@ class ProductItem extends StatelessWidget {
           const SizedBox(height: 8),
           Text(
             product.name,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
             style: Theme.of(context).textTheme.titleLarge!.copyWith(
                   fontWeight: FontWeight.bold,
                 ),

@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/src/features/product/presentation/product_list_screen/product_list_screen.dart';
 import 'package:flutter/material.dart';
 
 class SeeAllHeader extends StatelessWidget {
@@ -26,7 +27,14 @@ class SeeAllHeader extends StatelessWidget {
           ),
           const Spacer(),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ProductListScreen(),
+                ),
+              );
+            },
             style: TextButton.styleFrom(
               textStyle: Theme.of(context).textTheme.bodyLarge!.copyWith(
                     fontWeight: FontWeight.bold,

@@ -1,7 +1,7 @@
 import 'package:ecommerce_app/src/common_widgets/see_all_header.dart';
 import 'package:ecommerce_app/src/features/home/presentation/banner_slider.dart';
 import 'package:ecommerce_app/src/features/home/presentation/horizontal_categories_list.dart';
-import 'package:ecommerce_app/src/features/product/presentation/product_layouts/product_grid_view.dart';
+import 'package:ecommerce_app/src/features/product/presentation/product_layouts/category_preview.dart';
 import 'package:ecommerce_app/src/features/product/presentation/product_layouts/scrollable_product_list.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +24,7 @@ class HomeScreen extends StatelessWidget {
           SizedBox(height: 16),
 
           // Ürün Grid Düzeni
-          ProductGridView(),
+          CategoryPreview(),
 
           // Popüler Ürünler
           SeeAllHeader(title: "Popüler Ürünler"),
