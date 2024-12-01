@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/src/utils/constants/colors.dart';
 import 'package:ecommerce_app/src/utils/theme/custom_theme/app_bar_theme.dart';
+import 'package:ecommerce_app/src/utils/theme/custom_theme/elevated_button_theme.dart';
 import 'package:ecommerce_app/src/utils/theme/custom_theme/navigation_bar_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -22,6 +23,9 @@ class KAppTheme {
 
     // Navigation bar theme
     navigationBarTheme: KNavigationBarTheme.kLightNavigationBarTheme,
+
+    // ElevatedButton theme
+    elevatedButtonTheme: KElevatedButtonTheme.kLightElevatedButtonTheme,
   );
 
   // Dark theme
@@ -40,5 +44,8 @@ class KAppTheme {
 
     // Navigation bar theme
     navigationBarTheme: KNavigationBarTheme.kDarkNavigationBarTheme,
+
+    // ElevatedButton theme
+    elevatedButtonTheme: KElevatedButtonTheme.kDarkElevatedButtonTheme,
   );
 }

@@ -32,7 +32,7 @@ class HorizontalCategoriesList extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                 elevation: 0,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20.0),
+                  borderRadius: BorderRadius.circular(16.0),
                 ),
               ),
               child: Text(categories[index]),

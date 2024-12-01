@@ -75,7 +75,7 @@ class _NavigationMenuState extends State<NavigationMenu> {
                         ),
                         onPressed: () {
                           Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => SuggestionScreen(),
+                            builder: (context) => const SuggestionScreen(),
                           ));
                         },
                       ),
