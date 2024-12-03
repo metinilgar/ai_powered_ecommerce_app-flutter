@@ -50,10 +50,10 @@ class AuthStateController extends _$AuthStateController {
   }
 
   void logoutUser() {
-    // final preferences = ref.read(sharedPreferencesProvider);
+    final preferences = ref.read(sharedPreferencesProvider);
 
-    // preferences.clear();
+    preferences.clear();
 
-    // ref.invalidateSelf();
+    ref.invalidateSelf();
   }
 }
