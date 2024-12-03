@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/src/features/authentication/data/auth_repository.dart';
 import 'package:ecommerce_app/src/utils/providers/shared_preferences_provider.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -14,15 +15,16 @@ class AuthStateController extends _$AuthStateController {
   Future<bool> loginUser(
       {required String email, required String password}) async {
     try {
-      // final preferences = ref.read(sharedPreferencesProvider);
+      final preferences = ref.read(sharedPreferencesProvider);
 
-      // final data =
-      //     await ref.read(authRepositoryProvider).login(email, password);
+      final data =
+          await ref.read(authRepositoryProvider).login(email, password);
 
-      // await preferences.setString("userId", data.userId.toString());
-      // await preferences.setBool("isLoggedIn", true);
+      await preferences.setString("userId", data.userId.toString());
+      await preferences.setString("name", data.fullName.toString());
+      await preferences.setBool("isLoggedIn", true);
 
-      // ref.invalidateSelf();
+      ref.invalidateSelf();
       return true;
     } catch (e) {
       state = AsyncValue.error(e, StackTrace.current);
@@ -36,17 +38,11 @@ class AuthStateController extends _$AuthStateController {
     required String name,
   }) async {
     try {
-      // final preferences = ref.read(sharedPreferencesProvider);
+      final data = await ref
+          .read(authRepositoryProvider)
+          .register(name, password, email);
 
-      // final data = await ref
-      //     .read(authRepositoryProvider)
-      //     .register(name , password, email);
-
-      // await preferences.setString("userId", data.userId.toString());
-      // await preferences.setBool("isLoggedIn", true);
-
-      // ref.invalidateSelf();
-      return true;
+      return data;
     } catch (e) {
       state = AsyncValue.error(e.toString(), StackTrace.current);
       return false;

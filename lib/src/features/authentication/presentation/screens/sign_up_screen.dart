@@ -1,7 +1,6 @@
 import 'package:ecommerce_app/src/features/authentication/presentation/controllers/auth_state_controller.dart';
 import 'package:ecommerce_app/src/features/authentication/presentation/controllers/validation_controller.dart';
 import 'package:ecommerce_app/src/features/authentication/presentation/screens/sign_in_screen.dart';
-import 'package:ecommerce_app/src/features/navigation_menu/presentation/navigation_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -16,9 +15,18 @@ class SignUpScreen extends ConsumerWidget {
     String? password;
     String? name;
 
-    // ref.listen<AsyncValue>(authControllerProvider, (_, state) {
-    //   state.showAlertDialogOnError(context);
-    // });
+    ref.listen<AsyncValue>(
+      authStateControllerProvider,
+      (previous, state) {
+        if (state.isRefreshing == false && state.hasError) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(state.error.toString()),
+            ),
+          );
+        }
+      },
+    );
 
     return Scaffold(
       body: Center(
@@ -107,7 +115,6 @@ class SignUpScreen extends ConsumerWidget {
                   onPressed: () async {
                     if (formKey.currentState!.validate()) {
                       formKey.currentState!.save();
-
                       final status = await ref
                           .read(authStateControllerProvider.notifier)
                           .createAccount(
@@ -121,12 +128,6 @@ class SignUpScreen extends ConsumerWidget {
                           const SnackBar(
                             content: Text("Account created successfully"),
                           ),
-                        );
-                        Navigator.of(context).pushAndRemoveUntil(
-                          MaterialPageRoute(
-                            builder: (context) => const NavigationMenu(),
-                          ),
-                          (route) => false,
                         );
                       }
                     }

@@ -16,9 +16,18 @@ class SignInScreen extends ConsumerWidget {
     String? email;
     String? password;
 
-    // ref.listen<AsyncValue>(authControllerProvider, (_, state) {
-    //   state.showAlertDialogOnError(context);
-    // });
+    ref.listen<AsyncValue>(
+      authStateControllerProvider,
+      (previous, state) {
+        if (state.isRefreshing == false && state.hasError) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(state.error.toString()),
+            ),
+          );
+        }
+      },
+    );
 
     return Scaffold(
       body: Center(

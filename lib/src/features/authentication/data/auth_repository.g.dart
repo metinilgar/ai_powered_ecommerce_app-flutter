@@ -1,27 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'auth_state_controller.dart';
+part of 'auth_repository.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$authStateControllerHash() =>
-    r'cd8ccd48bcb6e592539c1c53f510412cb2afd5aa';
+String _$authRepositoryHash() => r'e3ee623d2b190a511e152d8bb6916a0f1bb41bc7';
 
-/// See also [AuthStateController].
-@ProviderFor(AuthStateController)
-final authStateControllerProvider =
-    AutoDisposeAsyncNotifierProvider<AuthStateController, bool>.internal(
-  AuthStateController.new,
-  name: r'authStateControllerProvider',
+/// See also [authRepository].
+@ProviderFor(authRepository)
+final authRepositoryProvider = AutoDisposeProvider<AuthRepository>.internal(
+  authRepository,
+  name: r'authRepositoryProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$authStateControllerHash,
+      : _$authRepositoryHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$AuthStateController = AutoDisposeAsyncNotifier<bool>;
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
+typedef AuthRepositoryRef = AutoDisposeProviderRef<AuthRepository>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

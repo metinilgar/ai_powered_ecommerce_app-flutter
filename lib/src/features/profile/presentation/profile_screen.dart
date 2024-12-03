@@ -1,4 +1,6 @@
+import 'package:ecommerce_app/src/utils/providers/shared_preferences_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -15,11 +17,18 @@ class ProfileScreen extends StatelessWidget {
         ),
         const SizedBox(height: 10),
         Center(
-          child: Text(
-            'User Profile',
-            style: Theme.of(context).textTheme.headlineMedium!.copyWith(
-                  color: Colors.grey.shade400,
-                ),
+          child: Consumer(
+            builder: (context, ref, child) {
+              final preferences = ref.read(sharedPreferencesProvider);
+              final name = preferences.getString('name') ?? '';
+
+              return Text(
+                'Hoşgeldin, $name',
+                style: Theme.of(context).textTheme.headlineMedium!.copyWith(
+                      color: Colors.grey.shade400,
+                    ),
+              );
+            },
           ),
         ),
       ],
