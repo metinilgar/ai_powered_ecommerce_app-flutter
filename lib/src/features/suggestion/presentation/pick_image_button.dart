@@ -1,25 +1,33 @@
 import 'dart:io';
 
+import 'package:ecommerce_app/src/features/suggestion/presentation/controllers/pick_image_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
 
-class PickImageButton extends StatefulWidget {
+class PickImageButton extends ConsumerStatefulWidget {
   const PickImageButton({super.key});
 
   @override
-  State<PickImageButton> createState() => _PickImageButtonState();
+  ConsumerState<PickImageButton> createState() => _PickImageButtonState();
 }
 
-class _PickImageButtonState extends State<PickImageButton> {
-  File? _userImage;
-
+class _PickImageButtonState extends ConsumerState<PickImageButton> {
   //  Image Picker
   void _onPickImage() {
     _showImageOptions(
-      (image) {
-        setState(() {
-          _userImage = image;
-        });
+      (image) async {
+        final status = await ref
+            .read(pickImageControllerProvider.notifier)
+            .uploadImage(image);
+
+        if (status && mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text("Resim başarıyla yüklendi!"),
+            ),
+          );
+        }
       },
     );
   }
@@ -76,6 +84,19 @@ class _PickImageButtonState extends State<PickImageButton> {
 
   @override
   Widget build(BuildContext context) {
+    ref.listen<AsyncValue>(
+      pickImageControllerProvider,
+      (previous, state) {
+        if (state.isRefreshing == false && state.hasError) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(state.error.toString()),
+            ),
+          );
+        }
+      },
+    );
+
     return IconButton(
       icon: const Icon(
         Icons.photo_camera_outlined,
