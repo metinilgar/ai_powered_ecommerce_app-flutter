@@ -15,6 +15,8 @@ class AuthStateController extends _$AuthStateController {
   Future<bool> loginUser(
       {required String email, required String password}) async {
     try {
+      state = const AsyncValue.loading();
+
       final preferences = ref.read(sharedPreferencesProvider);
 
       final data =
@@ -25,6 +27,7 @@ class AuthStateController extends _$AuthStateController {
       await preferences.setBool("isLoggedIn", true);
 
       ref.invalidateSelf();
+      state = const AsyncValue.data(true);
       return true;
     } catch (e) {
       state = AsyncValue.error(e, StackTrace.current);
@@ -38,10 +41,13 @@ class AuthStateController extends _$AuthStateController {
     required String name,
   }) async {
     try {
+      state = const AsyncValue.loading();
+
       final data = await ref
           .read(authRepositoryProvider)
           .register(name, password, email);
 
+      state = AsyncValue.data(data);
       return data;
     } catch (e) {
       state = AsyncValue.error(e.toString(), StackTrace.current);

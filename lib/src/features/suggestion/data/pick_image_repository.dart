@@ -14,7 +14,7 @@ class PickImageRepository {
   Future<bool> uploadImage(FormData formData, String id) async {
     try {
       final response = await dio.post(
-        "/users/file/${id}",
+        "/users/file/$id",
         data: formData,
       );
 

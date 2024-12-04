@@ -11,6 +11,9 @@ class SignUpScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final formKey = GlobalKey<FormState>();
     final validation = ref.read(validationControllerProvider.notifier);
+
+    final isLoading = ref.watch(authStateControllerProvider).isLoading;
+
     String? email;
     String? password;
     String? name;
@@ -112,33 +115,37 @@ class SignUpScreen extends ConsumerWidget {
 
                 // ElevatedButton for sign up
                 ElevatedButton(
-                  onPressed: () async {
-                    if (formKey.currentState!.validate()) {
-                      formKey.currentState!.save();
-                      final status = await ref
-                          .read(authStateControllerProvider.notifier)
-                          .createAccount(
-                            email: email!,
-                            password: password!,
-                            name: name!,
-                          );
+                  onPressed: isLoading
+                      ? null
+                      : () async {
+                          if (formKey.currentState!.validate()) {
+                            formKey.currentState!.save();
+                            final status = await ref
+                                .read(authStateControllerProvider.notifier)
+                                .createAccount(
+                                  email: email!,
+                                  password: password!,
+                                  name: name!,
+                                );
 
-                      if (status && context.mounted) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Text("Account created successfully"),
-                          ),
-                        );
-                      }
-                    }
-                  },
+                            if (status && context.mounted) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                  content: Text("Account created successfully"),
+                                ),
+                              );
+                            }
+                          }
+                        },
                   style: ElevatedButton.styleFrom(
                     minimumSize: const Size(180, 50),
                   ),
-                  child: const Text(
-                    'SIGN UP',
-                    style: TextStyle(fontSize: 20),
-                  ),
+                  child: isLoading
+                      ? const CircularProgressIndicator()
+                      : const Text(
+                          'SIGN UP',
+                          style: TextStyle(fontSize: 20),
+                        ),
                 ),
               ],
             ),

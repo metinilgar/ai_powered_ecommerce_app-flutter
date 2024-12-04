@@ -13,6 +13,8 @@ class SignInScreen extends ConsumerWidget {
     final formKey = GlobalKey<FormState>();
     final validation = ref.read(validationControllerProvider.notifier);
 
+    final isLoading = ref.watch(authStateControllerProvider).isLoading;
+
     String? email;
     String? password;
 
@@ -102,34 +104,39 @@ class SignInScreen extends ConsumerWidget {
 
                   // ElevatedButton for sign in
                   ElevatedButton(
-                    onPressed: () async {
-                      if (formKey.currentState!.validate()) {
-                        formKey.currentState!.save();
+                    onPressed: isLoading
+                        ? null
+                        : () async {
+                            if (formKey.currentState!.validate()) {
+                              formKey.currentState!.save();
 
-                        final loginStatus = await ref
-                            .read(authStateControllerProvider.notifier)
-                            .loginUser(
-                              email: email!,
-                              password: password!,
-                            );
+                              final loginStatus = await ref
+                                  .read(authStateControllerProvider.notifier)
+                                  .loginUser(
+                                    email: email!,
+                                    password: password!,
+                                  );
 
-                        if (loginStatus && context.mounted) {
-                          Navigator.of(context).pushAndRemoveUntil(
-                            MaterialPageRoute(
-                              builder: (context) => const NavigationMenu(),
-                            ),
-                            (route) => false,
-                          );
-                        }
-                      }
-                    },
+                              if (loginStatus && context.mounted) {
+                                Navigator.of(context).pushAndRemoveUntil(
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        const NavigationMenu(),
+                                  ),
+                                  (route) => false,
+                                );
+                              }
+                            }
+                          },
                     style: ElevatedButton.styleFrom(
                       minimumSize: const Size(180, 50),
                     ),
-                    child: const Text(
-                      'SIGN IN',
-                      style: TextStyle(fontSize: 18),
-                    ),
+                    child: isLoading
+                        ? const CircularProgressIndicator()
+                        : const Text(
+                            'SIGN IN',
+                            style: TextStyle(fontSize: 18),
+                          ),
                   ),
                 ],
               ),

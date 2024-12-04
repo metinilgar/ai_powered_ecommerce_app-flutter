@@ -1,6 +1,5 @@
 import 'package:ecommerce_app/src/features/authentication/presentation/controllers/auth_state_controller.dart';
 import 'package:ecommerce_app/src/features/authentication/presentation/screens/sign_in_screen.dart';
-import 'package:ecommerce_app/src/features/authentication/presentation/screens/splash_screen.dart';
 import 'package:ecommerce_app/src/features/navigation_menu/presentation/navigation_menu.dart';
 import 'package:ecommerce_app/src/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +27,7 @@ class MainApp extends ConsumerWidget {
                 return const SignInScreen();
               }
             },
-            loading: () => const SplashScreen(),
+            loading: () => const SignInScreen(),
             error: (error, _) => const SignInScreen(),
           ),
     );
