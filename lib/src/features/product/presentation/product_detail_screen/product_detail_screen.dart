@@ -55,7 +55,7 @@ class ProductDetailScreen extends StatelessWidget {
               Center(
                 child: Image.network(
                   width: double.infinity,
-                  product.imageUrl,
+                  product.imageName ?? "https://fakeimg.pl/500x500/?text=Ürün",
                 ),
               ),
               const SizedBox(height: 16),
