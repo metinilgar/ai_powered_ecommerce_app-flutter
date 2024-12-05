@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:ecommerce_app/src/features/home/models/category.dart';
+import 'package:ecommerce_app/src/features/categories/models/category.dart';
 import 'package:ecommerce_app/src/network/dio_exception_message.dart';
 import 'package:ecommerce_app/src/network/dio_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

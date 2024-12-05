@@ -72,7 +72,7 @@ class ProductDetailScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    product.price,
+                    product.price.toString(),
                     style: Theme.of(context).textTheme.displaySmall!.copyWith(
                           fontWeight: FontWeight.bold,
                         ),

@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/src/features/home/presentation/controllers/category_controller.dart';
+import 'package:ecommerce_app/src/features/categories/presentation/controllers/category_controller.dart';
 import 'package:ecommerce_app/src/features/product/presentation/product_list_screen/product_list_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -32,6 +32,7 @@ class HorizontalCategoriesList extends ConsumerWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) => ProductListScreen(
+                          id: category.id,
                           title: category.name,
                           description: category.description,
                         ),

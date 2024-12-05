@@ -6,8 +6,10 @@ class ProductListScreen extends StatelessWidget {
     super.key,
     required this.title,
     required this.description,
+    required this.id,
   });
 
+  final int id;
   final String title;
   final String description;
 
@@ -71,7 +73,7 @@ class ProductListScreen extends StatelessWidget {
                     .copyWith(fontSize: 18),
               ),
             ),
-            const ProductGridView(),
+            ProductGridView(id: id),
           ],
         ),
       ),

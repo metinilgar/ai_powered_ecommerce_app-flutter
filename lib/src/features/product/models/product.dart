@@ -2,13 +2,13 @@
 import 'dart:convert';
 
 class Product {
-  final String id;
+  final int id;
   final String name;
   final String size;
   final String material;
   final String brand;
-  final String price;
-  final String imageName;
+  final double price;
+  final String? imageName;
 
   Product({
     required this.id,
@@ -34,13 +34,13 @@ class Product {
 
   factory Product.fromMap(Map<String, dynamic> map) {
     return Product(
-      id: map['id'] as String,
+      id: map['id'] as int,
       name: map['name'] as String,
       size: map['size'] as String,
       material: map['material'] as String,
       brand: map['brand'] as String,
-      price: map['price'] as String,
-      imageName: map['imageName'] as String,
+      price: map['price'] as double,
+      imageName: map['imageName'] != null ? map['imageName'] as String : null,
     );
   }
 

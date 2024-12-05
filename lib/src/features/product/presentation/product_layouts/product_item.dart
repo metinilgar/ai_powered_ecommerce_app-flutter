@@ -28,7 +28,7 @@ class ProductItem extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(18.0),
             child: Image.network(
-              product.imageName,
+              product.imageName ?? "https://fakeimg.pl/500x500/?text=Ürün",
               height: 220,
               width: double.infinity,
               fit: BoxFit.cover,
@@ -44,7 +44,7 @@ class ProductItem extends StatelessWidget {
                 ),
           ),
           Text(
-            product.price,
+            product.price.toString(),
             style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                   fontWeight: FontWeight.bold,
                   color: Colors.grey,
