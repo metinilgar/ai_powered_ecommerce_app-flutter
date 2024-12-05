@@ -48,7 +48,7 @@ class ProductDetailScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // Product Header
-              ProductHeader(name: product.name, category: product.category),
+              ProductHeader(name: product.name, brand: product.brand),
               const SizedBox(height: 16),
 
               // Ürün Görseli

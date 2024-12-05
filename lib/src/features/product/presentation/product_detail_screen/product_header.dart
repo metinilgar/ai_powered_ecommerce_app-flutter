@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ProductHeader extends StatelessWidget {
-  const ProductHeader({super.key, required this.name, required this.category});
+  const ProductHeader({super.key, required this.name, required this.brand});
 
   final String name;
-  final String category;
+  final String brand;
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class ProductHeader extends StatelessWidget {
       children: [
         // Ürün Karegorisi
         Text(
-          category,
+          brand,
           style: Theme.of(context)
               .textTheme
               .labelLarge!

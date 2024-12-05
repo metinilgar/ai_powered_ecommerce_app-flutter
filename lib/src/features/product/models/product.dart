@@ -4,7 +4,6 @@ import 'dart:convert';
 class Product {
   final String id;
   final String name;
-  final String category; // TODO: Düzneleme yapılacak
   final String size;
   final String material;
   final String brand;
@@ -15,7 +14,6 @@ class Product {
     required this.id,
     required this.name,
     required this.size,
-    required this.category,
     required this.material,
     required this.brand,
     required this.price,
@@ -26,7 +24,6 @@ class Product {
     return <String, dynamic>{
       'id': id,
       'name': name,
-      'category': category,
       'size': size,
       'material': material,
       'brand': brand,
@@ -39,7 +36,6 @@ class Product {
     return Product(
       id: map['id'] as String,
       name: map['name'] as String,
-      category: map['category'] as String,
       size: map['size'] as String,
       material: map['material'] as String,
       brand: map['brand'] as String,
