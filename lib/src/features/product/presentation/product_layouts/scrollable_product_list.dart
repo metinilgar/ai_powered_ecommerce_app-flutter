@@ -82,24 +82,6 @@ class ScrollableProductList extends StatelessWidget {
         price: 349,
         imageName: 'https://fakeimg.pl/500x500/?text=Ürün',
       ),
-      Product(
-        id: 9,
-        name: 'Örgü Atkı',
-        size: 'Standart',
-        material: 'Yün',
-        brand: 'Columbia',
-        price: 249,
-        imageName: 'https://fakeimg.pl/500x500/?text=Ürün',
-      ),
-      Product(
-        id: 10,
-        name: 'Kamuflaj Desenli Şapka',
-        size: 'M',
-        material: 'Polyester',
-        brand: 'Under Armour',
-        price: 249,
-        imageName: 'https://fakeimg.pl/500x500/?text=Ürün',
-      ),
     ];
 
     return SizedBox(

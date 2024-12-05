@@ -31,4 +31,5 @@ flutter:
   assets:
     - assets/images/
     - assets/banners/
+    - assets/category_images/
 
