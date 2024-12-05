@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/src/features/product/models/product.dart';
 import 'package:ecommerce_app/src/features/product/presentation/product_detail_screen/options.dart';
+import 'package:ecommerce_app/src/features/product/presentation/product_detail_screen/product_features.dart';
 import 'package:ecommerce_app/src/features/product/presentation/product_detail_screen/product_header.dart';
 import 'package:ecommerce_app/src/features/product/presentation/product_detail_screen/product_info.dart';
 import 'package:flutter/material.dart';
@@ -65,6 +66,10 @@ class ProductDetailScreen extends StatelessWidget {
 
               // Ürün Bilgisi
               const ProductInfo(),
+              const SizedBox(height: 16),
+
+              // Ürün Özellikleri
+              ProductFeatures(material: product.material, size: product.size),
               const SizedBox(height: 16),
 
               // Fiyat ve Sepet Düğmesi

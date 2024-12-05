@@ -25,15 +25,15 @@ class Options extends StatelessWidget {
         SizedBox(height: 16),
 
         // Beden Seçenekleri
-        Option(
-          title: "Beden",
-          options: [
-            _SizeButton(size: "US 6"),
-            _SizeButton(size: "US 7"),
-            _SizeButton(size: "US 8"),
-            _SizeButton(size: "US 10"),
-          ],
-        ),
+        // Option(
+        //   title: "Beden",
+        //   options: [
+        //     _SizeButton(size: "US 6"),
+        //     _SizeButton(size: "US 7"),
+        //     _SizeButton(size: "US 8"),
+        //     _SizeButton(size: "US 10"),
+        //   ],
+        // ),
       ],
     );
   }

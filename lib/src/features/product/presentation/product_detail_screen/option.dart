@@ -12,13 +12,14 @@ class Option extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "Select Colour:",
+          title,
           style: Theme.of(context).textTheme.bodyMedium,
         ),
         const SizedBox(height: 8),
         Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: options),
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: options,
+        ),
       ],
     );
   }

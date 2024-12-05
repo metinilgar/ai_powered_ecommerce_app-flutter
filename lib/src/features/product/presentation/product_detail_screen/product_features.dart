@@ -3,13 +3,18 @@ import 'package:flutter/material.dart';
 class ProductFeatures extends StatelessWidget {
   const ProductFeatures({
     super.key,
+    required this.material,
+    required this.size,
   });
+
+  final String material;
+  final String size;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(8),
-      child: const Row(
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Expanded(
@@ -17,17 +22,17 @@ class ProductFeatures extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.check, size: 30),
-                  SizedBox(height: 8),
+                  const Icon(Icons.check, size: 30),
+                  const SizedBox(height: 8),
                   Text(
-                    "Cotton",
+                    material,
                     textAlign: TextAlign.center,
                   ),
                 ],
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 60,
             child: VerticalDivider(
               color: Colors.grey,
@@ -38,27 +43,27 @@ class ProductFeatures extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    "Fit",
+                  const Text(
+                    "Size",
                     textAlign: TextAlign.center,
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Text(
-                    "Regular",
+                    size,
                     textAlign: TextAlign.center,
                   ),
                 ],
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 60,
             child: VerticalDivider(
               color: Colors.grey,
             ),
           ),
-          Expanded(
+          const Expanded(
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -73,13 +78,13 @@ class ProductFeatures extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 60,
             child: VerticalDivider(
               color: Colors.grey,
             ),
           ),
-          Expanded(
+          const Expanded(
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,

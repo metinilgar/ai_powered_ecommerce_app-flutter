@@ -1,4 +1,3 @@
-import 'package:ecommerce_app/src/features/product/presentation/product_detail_screen/product_features.dart';
 import 'package:flutter/material.dart';
 
 class ProductInfo extends StatelessWidget {
@@ -26,10 +25,6 @@ class ProductInfo extends StatelessWidget {
               .bodyMedium!
               .copyWith(color: Colors.grey),
         ),
-        const SizedBox(height: 16),
-
-        // Ürün Özellikleri
-        const ProductFeatures(),
       ],
     );
   }
