@@ -1,4 +1,3 @@
-import 'package:ecommerce_app/src/features/product/presentation/product_list_screen/product_list_screen.dart';
 import 'package:flutter/material.dart';
 
 class SeeAllHeader extends StatelessWidget {
@@ -7,11 +6,13 @@ class SeeAllHeader extends StatelessWidget {
     required this.title,
     this.buttonTitle = "Tümünü Gör",
     this.padding = const EdgeInsets.symmetric(horizontal: 20),
+    this.onTab,
   });
 
   final String title;
   final String buttonTitle;
   final EdgeInsetsGeometry padding;
+  final VoidCallback? onTab;
 
   @override
   Widget build(BuildContext context) {
@@ -27,14 +28,7 @@ class SeeAllHeader extends StatelessWidget {
           ),
           const Spacer(),
           TextButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const ProductListScreen(),
-                ),
-              );
-            },
+            onPressed: onTab,
             style: TextButton.styleFrom(
               textStyle: Theme.of(context).textTheme.bodyLarge!.copyWith(
                     fontWeight: FontWeight.bold,

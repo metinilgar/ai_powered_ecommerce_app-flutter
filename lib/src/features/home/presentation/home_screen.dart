@@ -1,37 +1,54 @@
 import 'package:ecommerce_app/src/common_widgets/see_all_header.dart';
 import 'package:ecommerce_app/src/features/home/presentation/banner_slider.dart';
 import 'package:ecommerce_app/src/features/home/presentation/horizontal_categories_list.dart';
+import 'package:ecommerce_app/src/features/navigation_menu/presentation/controllers/navigation_controller.dart';
 import 'package:ecommerce_app/src/features/product/presentation/product_layouts/category_preview.dart';
 import 'package:ecommerce_app/src/features/product/presentation/product_layouts/scrollable_product_list.dart';
+import 'package:ecommerce_app/src/features/product/presentation/product_list_screen/product_list_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return const SingleChildScrollView(
+  Widget build(BuildContext context, WidgetRef ref) {
+    return SingleChildScrollView(
       child: Column(
         children: [
           // Banner Görseli
-          BannerSlider(),
+          const BannerSlider(),
 
           // Kategoriler Başlığı ve Butonu
-          SeeAllHeader(title: "Kategoriler"),
+          SeeAllHeader(
+            title: "Kategoriler",
+            onTab: () =>
+                ref.read(navigationControllerProvider.notifier).changeScreen(3),
+          ),
 
           // Yatay kategori sekmesi
-          HorizontalCategoriesList(),
-          SizedBox(height: 16),
+          const HorizontalCategoriesList(),
+          const SizedBox(height: 16),
 
           // Ürün Grid Düzeni
-          CategoryPreview(),
+          const CategoryPreview(),
 
           // Popüler Ürünler
-          SeeAllHeader(title: "Popüler Ürünler"),
+          SeeAllHeader(
+            title: "Popüler Ürünler",
+            onTab: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ProductListScreen(),
+                ),
+              );
+            },
+          ),
 
           // Popüler Ürünler Listesi
-          ScrollableProductList(),
-          SizedBox(height: 16),
+          const ScrollableProductList(),
+          const SizedBox(height: 16),
         ],
       ),
     );
