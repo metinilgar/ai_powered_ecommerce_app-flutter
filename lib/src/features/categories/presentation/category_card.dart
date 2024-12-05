@@ -91,9 +91,9 @@ class HalfCirclePainter extends CustomPainter {
 
     // Adjust the rect to be at the top of the card
     final Rect rect = Rect.fromLTWH(0, 0, size.width, 80); // Height is 60
-    final double startAngle = 3.14; // π (for the arc to start from the top)
-    final double sweepAngle = 3.14; // π (half-circle)
-    final bool useCenter = false;
+    const double startAngle = 3.14; // π (for the arc to start from the top)
+    const double sweepAngle = 3.14; // π (half-circle)
+    const bool useCenter = false;
 
     // Draw the half circle at the top
     canvas.drawArc(rect, startAngle, sweepAngle, useCenter, paint);

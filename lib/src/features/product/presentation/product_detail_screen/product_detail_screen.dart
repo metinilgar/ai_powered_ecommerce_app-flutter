@@ -1,17 +1,19 @@
+import 'package:ecommerce_app/src/features/cart/presentation/controllers/cart_controller.dart';
 import 'package:ecommerce_app/src/features/product/models/product.dart';
 import 'package:ecommerce_app/src/features/product/presentation/product_detail_screen/options.dart';
 import 'package:ecommerce_app/src/features/product/presentation/product_detail_screen/product_features.dart';
 import 'package:ecommerce_app/src/features/product/presentation/product_detail_screen/product_header.dart';
 import 'package:ecommerce_app/src/features/product/presentation/product_detail_screen/product_info.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class ProductDetailScreen extends StatelessWidget {
+class ProductDetailScreen extends ConsumerWidget {
   const ProductDetailScreen({super.key, required this.product});
 
   final Product product;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       // -- AppBar
       appBar: AppBar(
@@ -83,7 +85,18 @@ class ProductDetailScreen extends StatelessWidget {
                         ),
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      ref
+                          .read(cartControllerProvider.notifier)
+                          .addToCart(product);
+
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text("${product.name} sepete eklendi"),
+                          duration: const Duration(seconds: 2),
+                        ),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Theme.of(context).colorScheme.primary,
                       elevation: 0,

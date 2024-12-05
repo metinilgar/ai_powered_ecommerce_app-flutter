@@ -39,20 +39,20 @@ class Options extends StatelessWidget {
   }
 }
 
-class _SizeButton extends StatelessWidget {
-  final String size;
+// class _SizeButton extends StatelessWidget {
+//   final String size;
 
-  const _SizeButton({required this.size});
+//   const _SizeButton({required this.size});
 
-  @override
-  Widget build(BuildContext context) {
-    return OutlinedButton(
-      onPressed: () {},
-      style: OutlinedButton.styleFrom(
-        side: const BorderSide(color: Colors.grey),
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      ),
-      child: Text(size),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return OutlinedButton(
+//       onPressed: () {},
+//       style: OutlinedButton.styleFrom(
+//         side: const BorderSide(color: Colors.grey),
+//         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+//       ),
+//       child: Text(size),
+//     );
+//   }
+// }
