@@ -2,7 +2,14 @@ import 'package:ecommerce_app/src/features/product/presentation/product_layouts/
 import 'package:flutter/material.dart';
 
 class ProductListScreen extends StatelessWidget {
-  const ProductListScreen({super.key});
+  const ProductListScreen({
+    super.key,
+    required this.title,
+    required this.description,
+  });
+
+  final String title;
+  final String description;
 
   @override
   Widget build(BuildContext context) {
@@ -36,16 +43,32 @@ class ProductListScreen extends StatelessWidget {
               padding: const EdgeInsets.only(
                 left: 80,
                 right: 80,
-                top: 10,
-                bottom: 20,
+                top: 5,
+                bottom: 5,
               ),
               child: Text(
-                "Popüler Ürünler",
+                title,
                 textAlign: TextAlign.center,
                 style: Theme.of(context)
                     .textTheme
                     .displayMedium!
                     .copyWith(fontWeight: FontWeight.w500),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 20,
+                right: 20,
+                top: 5,
+                bottom: 30,
+              ),
+              child: Text(
+                description,
+                textAlign: TextAlign.center,
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyLarge!
+                    .copyWith(fontSize: 18),
               ),
             ),
             const ProductGridView(),

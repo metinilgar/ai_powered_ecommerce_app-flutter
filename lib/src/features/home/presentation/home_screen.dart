@@ -22,7 +22,7 @@ class HomeScreen extends ConsumerWidget {
           // Kategoriler Başlığı ve Butonu
           SeeAllHeader(
             title: "Kategoriler",
-            onTab: () =>
+            onPressed: () =>
                 ref.read(navigationControllerProvider.notifier).changeScreen(3),
           ),
 
@@ -36,11 +36,15 @@ class HomeScreen extends ConsumerWidget {
           // Popüler Ürünler
           SeeAllHeader(
             title: "Popüler Ürünler",
-            onTab: () {
+            onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const ProductListScreen(),
+                  builder: (context) => const ProductListScreen(
+                    title: "Popüler Ürünler",
+                    description:
+                        "En çok tercih edilen ve sevilen ürünleri keşfedin!",
+                  ),
                 ),
               );
             },

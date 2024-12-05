@@ -6,13 +6,13 @@ class SeeAllHeader extends StatelessWidget {
     required this.title,
     this.buttonTitle = "Tümünü Gör",
     this.padding = const EdgeInsets.symmetric(horizontal: 20),
-    this.onTab,
+    this.onPressed,
   });
 
   final String title;
   final String buttonTitle;
   final EdgeInsetsGeometry padding;
-  final VoidCallback? onTab;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class SeeAllHeader extends StatelessWidget {
           ),
           const Spacer(),
           TextButton(
-            onPressed: onTab,
+            onPressed: onPressed,
             style: TextButton.styleFrom(
               textStyle: Theme.of(context).textTheme.bodyLarge!.copyWith(
                     fontWeight: FontWeight.bold,
