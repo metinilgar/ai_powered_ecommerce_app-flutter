@@ -27,21 +27,15 @@ An AI-based mobile application built with Flutter that provides personalized clo
 
 ## Screenshots
 
-Welcome Page (Light)       |  Welcome Page (Dark)      | Login Page (Light)        | Login Page (Dark) 
+Login Screen               |  Signup Screen            | Home Screen               | Cart Screen
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-![]()|![]()|![]()|![]()
+![](https://github.com/user-attachments/assets/93c05576-e0b5-4684-a4a1-14d46b442e8d)|![](https://github.com/user-attachments/assets/2ff0d168-aab9-4830-bdf1-6e828a1de008)|![](https://github.com/user-attachments/assets/6fa3066e-7158-4b5f-8700-b67f1485332a)|![](https://github.com/user-attachments/assets/ad2867f7-1784-4eea-9785-2b0ea1ac72be)
 
-Signup Page (Light)        |  Signup Page (Dark)       | Home Page (Light)         | Home Page (Dark) 
+Category Screen            |  Product Screen           | Product List Screen       | Image Upload Screen 
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-![]()|![]()|![]()|![]()
+![](https://github.com/user-attachments/assets/66d6b83f-b9b2-43b8-ac4b-576e083f1dbd)|![](https://github.com/user-attachments/assets/1c1988bd-0517-43c4-95af-e6def0152b65)|![](https://github.com/user-attachments/assets/e4630e95-4064-4e24-a4fd-a170535b02c3)|![](https://github.com/user-attachments/assets/65987c16-6098-407a-a7c8-9827210c0f2a)
 
-Home Page Drawer (Light)   |  Home Page Drawer (Dark)  | Post Creation Page (Light)| Post Creation Page (Dark)  
-:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-![]()|![]()|![]()|![]()
 
-Profile Page (Light)       |  Profile Page (Dark)      | Edit Profile Page (Light) | Edit Profile Page (Dark)  
-:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-![]()|![]()|![]()|![]()
 
 ## Requirements
 
