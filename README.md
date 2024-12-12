@@ -2,7 +2,7 @@
 
 An AI-based mobile application built with Flutter that provides personalized clothing recommendations by analyzing the user's profile picture. The app uses AI to predict gender and age and suggests clothing items accordingly, enhancing the shopping experience. This project integrates machine learning with Flutter to provide real-time, intelligent recommendations.
 
-> The app connects to a backend AI model to analyze images, predict user characteristics, and recommend products. You can find the backend [API repository here]("").
+> The app connects to a backend AI model to analyze images, predict user characteristics, and recommend products. You can find the backend [API repository here](https://github.com/MASalmanss/Images-and-Combinations).
 
 ## Features
 
@@ -42,7 +42,7 @@ Category Screen            |  Product Screen           | Product List Screen    
 - Flutter SDK
 - Dart 2.0 or above
 - Android Studio or Xcode for iOS
-- [Back-end API.]()
+- [Back-end API.](https://github.com/MASalmanss/Images-and-Combinations)
 
 ## Installation
 
@@ -65,7 +65,7 @@ Category Screen            |  Product Screen           | Product List Screen    
 
 ## Usage
 
-To explore the app, simply run it in your local environment using Flutter's run command. The app will provide you with an e-commerce experience. The app communicates with a backend AI model to process the image and provide predictions for gender and age. You can find the backend API repository here.
+To explore the app, simply run it in your local environment using Flutter's run command. The app will provide you with an e-commerce experience. The app communicates with a backend AI model to process the image and provide predictions for gender and age. You can find the backend API repository [here](https://github.com/MASalmanss/Images-and-Combinations).
 
 ## Contribution
 Contributions are welcome! If you have any ideas for improvements or find any bugs, please feel free to submit an issue or create a pull request.
