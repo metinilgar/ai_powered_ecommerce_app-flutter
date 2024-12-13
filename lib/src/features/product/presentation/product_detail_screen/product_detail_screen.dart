@@ -4,6 +4,7 @@ import 'package:ecommerce_app/src/features/product/presentation/product_detail_s
 import 'package:ecommerce_app/src/features/product/presentation/product_detail_screen/product_features.dart';
 import 'package:ecommerce_app/src/features/product/presentation/product_detail_screen/product_header.dart';
 import 'package:ecommerce_app/src/features/product/presentation/product_detail_screen/product_info.dart';
+import 'package:ecommerce_app/src/utils/constants/network_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -57,8 +58,10 @@ class ProductDetailScreen extends ConsumerWidget {
               // Ürün Görseli
               Center(
                 child: Image.network(
+                  product.imageName != null
+                      ? "${KNetworkConstants.kBaseUrl}/products/file/${product.imageName}"
+                      : "https://fakeimg.pl/500x500/?text=Ürün",
                   width: double.infinity,
-                  product.imageName ?? "https://fakeimg.pl/500x500/?text=Ürün",
                 ),
               ),
               const SizedBox(height: 16),

@@ -17,7 +17,6 @@ class ScrollableProductList extends StatelessWidget {
         material: 'Pamuk',
         brand: 'Zara',
         price: 199,
-        imageName: 'https://fakeimg.pl/500x500/?text=Ürün',
       ),
       Product(
         id: 2,
@@ -26,7 +25,6 @@ class ScrollableProductList extends StatelessWidget {
         material: 'Denim',
         brand: 'Levi\'s',
         price: 599,
-        imageName: 'https://fakeimg.pl/500x500/?text=Ürün',
       ),
       Product(
         id: 3,
@@ -35,7 +33,6 @@ class ScrollableProductList extends StatelessWidget {
         material: 'Polyester',
         brand: 'The North Face',
         price: 1499,
-        imageName: 'https://fakeimg.pl/500x500/?text=Ürün',
       ),
       Product(
         id: 4,
@@ -44,7 +41,6 @@ class ScrollableProductList extends StatelessWidget {
         material: 'Polyester',
         brand: 'Koton',
         price: 249,
-        imageName: 'https://fakeimg.pl/500x500/?text=Ürün',
       ),
       Product(
         id: 5,
@@ -53,7 +49,6 @@ class ScrollableProductList extends StatelessWidget {
         material: 'File Kumaş',
         brand: 'Nike',
         price: 899,
-        imageName: 'https://fakeimg.pl/500x500/?text=Ürün',
       ),
       Product(
         id: 6,
@@ -62,7 +57,6 @@ class ScrollableProductList extends StatelessWidget {
         material: 'Yün',
         brand: 'Massimo Dutti',
         price: 549,
-        imageName: 'https://fakeimg.pl/500x500/?text=Ürün',
       ),
       Product(
         id: 7,
@@ -71,7 +65,6 @@ class ScrollableProductList extends StatelessWidget {
         material: 'Polyester',
         brand: 'Nike',
         price: 299,
-        imageName: 'https://fakeimg.pl/500x500/?text=Ürün',
       ),
       Product(
         id: 8,
@@ -80,7 +73,6 @@ class ScrollableProductList extends StatelessWidget {
         material: 'Polyester',
         brand: 'Zara',
         price: 349,
-        imageName: 'https://fakeimg.pl/500x500/?text=Ürün',
       ),
     ];
 

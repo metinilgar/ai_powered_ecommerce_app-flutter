@@ -16,7 +16,7 @@ class Product {
     required this.material,
     required this.brand,
     required this.price,
-    required this.imageName,
+    this.imageName,
   });
 
   Map<String, dynamic> toMap() {

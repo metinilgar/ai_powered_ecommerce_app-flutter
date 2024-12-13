@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/src/features/product/models/product.dart';
 import 'package:ecommerce_app/src/features/product/presentation/product_detail_screen/product_detail_screen.dart';
+import 'package:ecommerce_app/src/utils/constants/network_constants.dart';
 import 'package:flutter/material.dart';
 
 class ProductItem extends StatelessWidget {
@@ -28,7 +29,9 @@ class ProductItem extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(18.0),
             child: Image.network(
-              product.imageName ?? "https://fakeimg.pl/500x500/?text=Ürün",
+              product.imageName != null
+                  ? "${KNetworkConstants.kBaseUrl}/products/file/${product.imageName}"
+                  : "https://fakeimg.pl/500x500/?text=Ürün",
               height: 220,
               width: double.infinity,
               fit: BoxFit.cover,
