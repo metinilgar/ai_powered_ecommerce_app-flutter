@@ -27,13 +27,23 @@ An AI-based mobile application built with Flutter that provides personalized clo
 
 ## Screenshots
 
-Login Screen               |  Signup Screen            | Home Screen               | Cart Screen
+Login Screen (Light)       |  Login Screen (Dark)      | Signup Screen (Light)      | Signup Screen (Dark)
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-![](https://github.com/user-attachments/assets/93c05576-e0b5-4684-a4a1-14d46b442e8d)|![](https://github.com/user-attachments/assets/2ff0d168-aab9-4830-bdf1-6e828a1de008)|![](https://github.com/user-attachments/assets/6fa3066e-7158-4b5f-8700-b67f1485332a)|![](https://github.com/user-attachments/assets/ad2867f7-1784-4eea-9785-2b0ea1ac72be)
+![](https://github.com/user-attachments/assets/93c05576-e0b5-4684-a4a1-14d46b442e8d)|![](https://github.com/user-attachments/assets/75cc1aee-ac8d-42d5-8d27-bb68cc90cbb9)|![](https://github.com/user-attachments/assets/2ff0d168-aab9-4830-bdf1-6e828a1de008)|![](https://github.com/user-attachments/assets/6771334d-5f58-47b6-b1c3-ac45d5b069d9)|
 
-Category Screen            |  Product Screen           | Product List Screen       | Image Upload Screen 
+ Home Screen (Light)       |  Home Screen (Dark)       |  Cart Screen (Light)      | Cart Screen (Dark)
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-![](https://github.com/user-attachments/assets/66d6b83f-b9b2-43b8-ac4b-576e083f1dbd)|![](https://github.com/user-attachments/assets/1c1988bd-0517-43c4-95af-e6def0152b65)|![](https://github.com/user-attachments/assets/e4630e95-4064-4e24-a4fd-a170535b02c3)|![](https://github.com/user-attachments/assets/65987c16-6098-407a-a7c8-9827210c0f2a)
+![](https://github.com/user-attachments/assets/9829d991-719c-45f0-b50d-b1d69f26ecbb)|![](https://github.com/user-attachments/assets/05d7abb0-2d2c-4b0a-9c66-afada24c1bc7)|![](https://github.com/user-attachments/assets/94e4f873-253b-4ece-84d6-a0f1fd14cc5e)|![](https://github.com/user-attachments/assets/b7a084d6-f5d8-4e55-a590-65d83455098f)
+
+
+Category Screen (Light)    |  Category Screen (Dark)   | Product Screen (Light)    | Product Screen (Dark) 
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+![](https://github.com/user-attachments/assets/66d6b83f-b9b2-43b8-ac4b-576e083f1dbd)|![](https://github.com/user-attachments/assets/e04efaee-aedc-4a73-9037-aa465281e796)|![](https://github.com/user-attachments/assets/66668a47-9b1a-4db7-ba75-001673c84273)|![](https://github.com/user-attachments/assets/ac6507d6-1d1e-41dd-8661-ec4f77a8870c)
+
+
+ Product List Screen (Light)|Product List Screen (Dark) |Image Upload Screen (Light)| Image Upload Screen (Dark)
+ :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+![](https://github.com/user-attachments/assets/09c89dc0-f1c2-4432-9f3e-87494566ddae)|![](https://github.com/user-attachments/assets/c04abfda-6bf0-40fc-8e43-877971d38650)|![](https://github.com/user-attachments/assets/9b35e68f-48c3-4054-8797-dfae7a2bbe58)|![](https://github.com/user-attachments/assets/b3458632-5e95-460d-9bc4-28ad89fcaa4d)|
 
 
 
