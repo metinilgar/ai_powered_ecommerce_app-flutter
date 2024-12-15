@@ -1,5 +1,5 @@
 import 'package:ecommerce_app/src/common_widgets/see_all_header.dart';
-import 'package:ecommerce_app/src/features/home/presentation/banner_slider.dart';
+import 'package:ecommerce_app/src/common_widgets/banner_slider.dart';
 import 'package:ecommerce_app/src/features/categories/presentation/horizontal_categories_list.dart';
 import 'package:ecommerce_app/src/features/navigation_menu/presentation/controllers/navigation_controller.dart';
 import 'package:ecommerce_app/src/features/product/presentation/product_layouts/category_preview.dart';

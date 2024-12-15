@@ -33,7 +33,6 @@ class ProductRepository {
       final response = await dio.get("/products");
 
       if (response.statusCode == 200) {
-        print(response.data);
         return List<Product>.from(
           response.data.map((product) => Product.fromMap(product)),
         );
