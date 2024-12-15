@@ -43,6 +43,22 @@ class ProductRepository {
       throw DioExceptionMessage.fromDioError(e).errorMessage;
     }
   }
+
+  Future<List<Product>> getSuggestionProducts(int id) async {
+    try {
+      final response = await dio.get("/products/personal/$id");
+
+      if (response.statusCode == 200) {
+        return List<Product>.from(
+          response.data.map((product) => Product.fromMap(product)),
+        );
+      }
+
+      throw "something went wrong";
+    } on DioException catch (e) {
+      throw DioExceptionMessage.fromDioError(e).errorMessage;
+    }
+  }
 }
 
 @riverpod

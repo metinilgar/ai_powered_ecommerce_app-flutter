@@ -2,7 +2,7 @@ import 'package:ecommerce_app/src/common_widgets/see_all_header.dart';
 import 'package:ecommerce_app/src/common_widgets/banner_slider.dart';
 import 'package:ecommerce_app/src/features/categories/presentation/horizontal_categories_list.dart';
 import 'package:ecommerce_app/src/features/navigation_menu/presentation/controllers/navigation_controller.dart';
-import 'package:ecommerce_app/src/features/product/presentation/product_layouts/category_preview.dart';
+import 'package:ecommerce_app/src/features/product/presentation/product_layouts/suggestion_product_list.dart';
 import 'package:ecommerce_app/src/features/product/presentation/product_layouts/scrollable_product_list.dart';
 import 'package:ecommerce_app/src/features/product/presentation/product_list_screen/product_list_screen.dart';
 import 'package:flutter/material.dart';
@@ -31,7 +31,7 @@ class HomeScreen extends ConsumerWidget {
           const SizedBox(height: 16),
 
           // Ürün Grid Düzeni
-          const CategoryPreview(),
+          const SuggestionProductList(),
 
           // Popüler Ürünler
           SeeAllHeader(
