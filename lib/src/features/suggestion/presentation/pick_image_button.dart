@@ -1,12 +1,16 @@
 import 'dart:io';
 
+import 'package:ecommerce_app/src/features/product/presentation/controllers/suggestion_product_controller.dart';
 import 'package:ecommerce_app/src/features/suggestion/presentation/controllers/pick_image_controller.dart';
+import 'package:ecommerce_app/src/utils/providers/shared_preferences_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
 
 class PickImageButton extends ConsumerStatefulWidget {
-  const PickImageButton({super.key});
+  const PickImageButton({super.key, this.iconOnly = true});
+
+  final bool iconOnly;
 
   @override
   ConsumerState<PickImageButton> createState() => _PickImageButtonState();
@@ -22,6 +26,8 @@ class _PickImageButtonState extends ConsumerState<PickImageButton> {
             .uploadImage(image);
 
         if (status && mounted) {
+          ref.refresh(SuggestionProductControllerProvider(int.parse(
+              ref.read(sharedPreferencesProvider).getString('userId') ?? '0')));
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
               content: Text("Resim başarıyla yüklendi!"),
@@ -97,6 +103,17 @@ class _PickImageButtonState extends ConsumerState<PickImageButton> {
       },
     );
 
+    if (widget.iconOnly) {
+      return _iconButton();
+    } else {
+      return OutlinedButton.icon(
+          onPressed: _onPickImage,
+          label: const Text("Fotoğraf Yükle"),
+          icon: const Icon(Icons.photo_camera_outlined));
+    }
+  }
+
+  IconButton _iconButton() {
     return IconButton(
       icon: const Icon(
         Icons.photo_camera_outlined,

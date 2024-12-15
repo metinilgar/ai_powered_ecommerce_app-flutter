@@ -11,7 +11,6 @@ class HorizontalCategoriesList extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final categories = ref.watch(categoryControllerProvider);
-    
 
     return categories.when(
       data: (categories) {
