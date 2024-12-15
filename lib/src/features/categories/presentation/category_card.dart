@@ -9,18 +9,18 @@ class CategoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final categoriesImages = [
-      "shirt",
-      "pants",
-      "jacket",
-      "dress",
-      "shoe",
-      "hat",
-      "sweater",
-      "shorts",
-      "skirt",
-      "scarf"
-    ];
+    // final categoriesImages = [
+    //   "shirt",
+    //   "pants",
+    //   "jacket",
+    //   "dress",
+    //   "shoe",
+    //   "hat",
+    //   "sweater",
+    //   "shorts",
+    //   "skirt",
+    //   "scarf"
+    // ];
 
     return InkWell(
       onTap: () {
@@ -53,28 +53,30 @@ class CategoryCard extends StatelessWidget {
             ),
 
             // Kategori adı
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                category.name,
-                style: Theme.of(context).textTheme.headlineSmall,
+            Center(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  category.name,
+                  style: Theme.of(context).textTheme.headlineLarge,
+                ),
               ),
             ),
 
             // Resim
-            Positioned(
-              bottom: 10,
-              left: 0,
-              right: 0,
-              child: Center(
-                child: Image.asset(
-                  "assets/category_images/${categoriesImages[category.id - 1]}.png",
-                  fit: BoxFit.cover,
-                  height: 120,
-                  width: 120,
-                ),
-              ),
-            ),
+            // Positioned(
+            //   bottom: 10,
+            //   left: 0,
+            //   right: 0,
+            //   child: Center(
+            //     child: Image.asset(
+            //       "assets/category_images/${categoriesImages[category.id - 1]}.png",
+            //       fit: BoxFit.cover,
+            //       height: 120,
+            //       width: 120,
+            //     ),
+            //   ),
+            // ),
           ],
         ),
       ),

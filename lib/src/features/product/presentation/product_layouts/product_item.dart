@@ -40,7 +40,7 @@ class ProductItem extends StatelessWidget {
           const SizedBox(height: 8),
           Text(
             product.name,
-            maxLines: 2,
+            maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: Theme.of(context).textTheme.titleLarge!.copyWith(
                   fontWeight: FontWeight.bold,

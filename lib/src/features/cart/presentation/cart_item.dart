@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/src/features/cart/models/cart_product_data.dart';
 import 'package:ecommerce_app/src/features/cart/presentation/controllers/cart_controller.dart';
+import 'package:ecommerce_app/src/utils/constants/network_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -21,7 +22,9 @@ class CartItem extends ConsumerWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(20),
             child: Image.network(
-              "https://fakeimg.pl/500x500/?text=Ürün",
+              cartProduct.product.imageName != null
+                  ? "${KNetworkConstants.kBaseUrl}/products/file/${cartProduct.product.imageName}"
+                  : "https://fakeimg.pl/500x500/?text=Ürün",
               width: 180,
               height: 200,
               fit: BoxFit.cover,

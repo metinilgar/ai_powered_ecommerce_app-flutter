@@ -77,6 +77,8 @@ class CartScreen extends ConsumerWidget {
 
   Widget _priceDetailRow(String label, double amount, BuildContext context,
       {bool isTotal = false}) {
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 5),
       child: Row(
@@ -85,14 +87,22 @@ class CartScreen extends ConsumerWidget {
           Text(
             label,
             style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                  color: isTotal ? Colors.black : Colors.grey.shade600,
+                  color: isTotal
+                      ? isDarkMode
+                          ? Colors.white
+                          : Colors.black
+                      : Colors.grey.shade600,
                   fontWeight: isTotal ? FontWeight.bold : FontWeight.normal,
                 ),
           ),
           Text(
             '₺${amount.toStringAsFixed(2)}',
             style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                  color: isTotal ? Colors.black : Colors.grey.shade600,
+                  color: isTotal
+                      ? isDarkMode
+                          ? Colors.white
+                          : Colors.black
+                      : Colors.grey.shade600,
                   fontWeight: isTotal ? FontWeight.bold : FontWeight.normal,
                 ),
           ),

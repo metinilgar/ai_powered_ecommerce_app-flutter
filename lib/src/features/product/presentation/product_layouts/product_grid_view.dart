@@ -13,26 +13,30 @@ class ProductGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+    final aspectRatio = screenWidth / (screenHeight / 1.4);
+
     return products.when(
       data: (products) {
-        return _buildGridView(products);
+        return _buildGridView(products, aspectRatio);
       },
       error: (error, stackTrace) => Text(error.toString()),
       loading: () => const CircularProgressIndicator(),
     );
   }
 
-  GridView _buildGridView(List<Product> products) {
+  GridView _buildGridView(List<Product> products, double aspectRatio) {
     return GridView.builder(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       itemCount: products.length,
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         crossAxisSpacing: 16,
         mainAxisSpacing: 16,
-        childAspectRatio: 0.6,
+        childAspectRatio: aspectRatio,
       ),
       itemBuilder: (context, index) {
         final product = products[index];
