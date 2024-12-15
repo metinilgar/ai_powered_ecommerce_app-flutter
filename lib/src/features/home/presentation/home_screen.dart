@@ -41,7 +41,6 @@ class HomeScreen extends ConsumerWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) => const ProductListScreen(
-                    id: 1, // TODO: Popüler ürünler kategorisinin id'si
                     title: "Popüler Ürünler",
                     description:
                         "En çok tercih edilen ve sevilen ürünleri keşfedin!",

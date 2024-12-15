@@ -1,21 +1,18 @@
 import 'package:ecommerce_app/src/features/product/models/product.dart';
-import 'package:ecommerce_app/src/features/product/presentation/controllers/product_controller.dart';
 import 'package:ecommerce_app/src/features/product/presentation/product_layouts/product_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class ProductGridView extends ConsumerWidget {
+class ProductGridView extends StatelessWidget {
   const ProductGridView({
     super.key,
-    required this.id,
+    required this.products,
   });
 
-  final int id;
+  final AsyncValue<List<Product>> products;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final products = ref.watch(productControllerProvider(id));
-
+  Widget build(BuildContext context) {
     return products.when(
       data: (products) {
         return _buildGridView(products);

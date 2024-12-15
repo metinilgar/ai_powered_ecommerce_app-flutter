@@ -2,12 +2,12 @@ import 'package:ecommerce_app/src/features/product/data/product_repository.dart'
 import 'package:ecommerce_app/src/features/product/models/product.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-part 'product_controller.g.dart';
+part 'popular_product_controller.g.dart';
 
 @riverpod
-class ProductController extends _$ProductController {
+class PopularProductController extends _$PopularProductController {
   @override
-  FutureOr<List<Product>> build(int id) {
-    return ref.read(productRepositoryProvider).getCategoryProducts(id);
+  FutureOr<List<Product>> build() {
+    return ref.read(productRepositoryProvider).getPopularProducts();
   }
 }

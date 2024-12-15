@@ -1,20 +1,27 @@
+import 'package:ecommerce_app/src/features/product/presentation/controllers/popular_product_controller.dart';
+import 'package:ecommerce_app/src/features/product/presentation/controllers/product_controller.dart';
 import 'package:ecommerce_app/src/features/product/presentation/product_layouts/product_grid_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class ProductListScreen extends StatelessWidget {
+class ProductListScreen extends ConsumerWidget {
   const ProductListScreen({
     super.key,
     required this.title,
     required this.description,
-    required this.id,
+    this.id,
   });
 
-  final int id;
+  final int? id;
   final String title;
   final String description;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final products = id != null
+        ? ref.watch(productControllerProvider(id!))
+        : ref.watch(popularProductControllerProvider);
+
     return Scaffold(
       appBar: AppBar(
         leading: Transform(
@@ -73,7 +80,7 @@ class ProductListScreen extends StatelessWidget {
                     .copyWith(fontSize: 18),
               ),
             ),
-            ProductGridView(id: id),
+            ProductGridView(products: products),
           ],
         ),
       ),
